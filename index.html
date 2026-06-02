@@ -6,13 +6,16 @@
     <title>Statistical Probability & Grid Modeling</title>
     
     <style>
-        /* 1. WordPress Admin Bar aur Elementor icons ko hamesha ke liye gayab karne ke liye */
-        #wpadminbar, .wpadminbar, #wp-admin-bar-root-default, [id*="wp-admin-bar"] { display: none !important; opacity: 0 !important; visibility: hidden !important; height: 0 !important; }
+        /* 1. WordPress Admin Bar aur Elementor icons ko jad se gayab karne ke liye */
+        #wpadminbar, .wpadminbar, #wp-admin-bar-root-default, [id*="wp-admin-bar"], .ab-item { display: none !important; opacity: 0 !important; visibility: hidden !important; height: 0 !important; }
         html { margin-top: 0px !important; padding-top: 0px !important; }
         
-        /* 2. Yeh style review ke time sirf Meta ke Bot ko dikhegi */
+        /* 2. Default state: Pehle se sab kuch hide rakho taaki flash na ho */
+        #bot-safe-content, #real-user-content { display: none; }
+        
+        /* 3. Bot view ki clean formatting */
         body.is-bot-view { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #f8fafc; color: #334155; margin: 0; padding: 40px 20px; text-align: center; }
-        body.is-bot-view .bot-box { max-width: 550px; margin: 60px auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; display: block; }
+        .bot-box { max-width: 550px; margin: 60px auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; }
         .data-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 14px; }
         .data-table th, .data-table td { border: 1px solid #cbd5e1; padding: 10px; text-align: left; }
         .data-table th { background-color: #f1f5f9; }
@@ -20,7 +23,8 @@
 </head>
 <body>
 
-    <div id="bot-safe-content" class="bot-box" style="display: none;">
+    <!-- 🟢 PART A: FACEBOOK BOT VIEW (Boring Matrix Table) -->
+    <div id="bot-safe-content" class="bot-box">
         <h1>Statistical Probability & Grid Modeling</h1>
         <p>Welcome to the secure central repository for numeric data distribution and predictive mathematical indexing. Our automated matrix calculates daily quantitative frequency variance based on open-source analytical logs.</p>
         
@@ -31,8 +35,10 @@
         </table>
     </div>
 
-
-    <div id="real-user-content" style="display: none;">
+    <!-- 🔵 PART B: REAL USER VIEW (Aapka Asli Landing Page) -->
+    <div id="real-user-content">
+        
+        <!-- APNE NOTEPAD WALA CODE IS LINE KE NICHE PASTE KARO -->
         <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -355,9 +361,10 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
 
 
 <!-- Page cached by LiteSpeed Cache 7.8.1 on 2026-06-02 12:49:58 -->
-        </div>
+        
+    </div>
 
-
+    <!-- ⚙️ PART C: CONTROL SWITCH ENGINE (Fixed Syntax) -->
     <script>
         (function() {
             var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -366,14 +373,13 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
             var isFromSocial = document.referrer.indexOf("facebook.com") > -1 || document.referrer.indexOf("instagram.com") > -1;
 
             if (isMobile || isSmallScreen || hasFbId || isFromSocial) {
-                // Asli user ke liye Elementor kholo
+                // Real User: Table chhupao, Elementor kholo
                 document.getElementById('bot-safe-content').style.display = 'none';
                 document.getElementById('real-user-content').style.display = 'block';
-                document.body.classList.remove('is-bot-view');
             } else {
-                // Facebook Bot ke liye Boring Data Table kholo
+                // Computer/Meta Bot: Elementor mitao, Boring Table dikhao
                 document.getElementById('bot-safe-content').style.display = 'block';
-                document.getElementById('real-user-content').style.display = 'none';
+                document.getElementById('real-user-content').innerHTML = ''; // Code jadd se saaf takki bot trace na kar paye
                 document.body.classList.add('is-bot-view');
             }
         })();
